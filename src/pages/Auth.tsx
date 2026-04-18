@@ -18,6 +18,7 @@ const signInSchema = z.object({
   email: z.string().trim().email().max(255),
   password: z.string().min(1).max(72),
 });
+type SignIn = z.infer<typeof signInSchema>;
 
 const Auth = () => {
   const { user, loading } = useAuth();
@@ -57,7 +58,7 @@ const Auth = () => {
     const parsed = signInSchema.safeParse({ email: f.get("email"), password: f.get("password") });
     if (!parsed.success) { toast.error("Please check your email and password"); return; }
     setBusy(true);
-    const { error } = await supabase.auth.signInWithPassword(parsed.data);
+    const { error } = await supabase.auth.signInWithPassword(parsed.data as SignIn);
     setBusy(false);
     if (error) { toast.error(error.message); return; }
     nav("/companion");
