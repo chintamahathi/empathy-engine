@@ -14,7 +14,140 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_messages: {
+        Row: {
+          content: string
+          conversation_id: string
+          coping_strategies: string[] | null
+          created_at: string
+          emotions: string[] | null
+          id: string
+          risk_level: string | null
+          role: string
+          sentiment: string | null
+          user_id: string
+        }
+        Insert: {
+          content: string
+          conversation_id: string
+          coping_strategies?: string[] | null
+          created_at?: string
+          emotions?: string[] | null
+          id?: string
+          risk_level?: string | null
+          role: string
+          sentiment?: string | null
+          user_id: string
+        }
+        Update: {
+          content?: string
+          conversation_id?: string
+          coping_strategies?: string[] | null
+          created_at?: string
+          emotions?: string[] | null
+          id?: string
+          risk_level?: string | null
+          role?: string
+          sentiment?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chat_messages_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "conversations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      conversations: {
+        Row: {
+          created_at: string
+          id: string
+          title: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          title?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          title?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      journal_entries: {
+        Row: {
+          ai_reflection: string | null
+          content: string
+          created_at: string
+          emotions: string[] | null
+          id: string
+          mood_score: number | null
+          risk_level: string | null
+          sentiment: string | null
+          themes: string[] | null
+          user_id: string
+        }
+        Insert: {
+          ai_reflection?: string | null
+          content: string
+          created_at?: string
+          emotions?: string[] | null
+          id?: string
+          mood_score?: number | null
+          risk_level?: string | null
+          sentiment?: string | null
+          themes?: string[] | null
+          user_id: string
+        }
+        Update: {
+          ai_reflection?: string | null
+          content?: string
+          created_at?: string
+          emotions?: string[] | null
+          id?: string
+          mood_score?: number | null
+          risk_level?: string | null
+          sentiment?: string | null
+          themes?: string[] | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
