@@ -1,10 +1,10 @@
 project_id = "hhzuyppbymgscehcwofp"
 
 [functions.empath-chat]
-verify_jwt = true
+verify_jwt = false
 
 [functions.analyze-journal]
-verify_jwt = true
+verify_jwt = false
 
 [functions.insights]
-verify_jwt = true
+verify_jwt = false
