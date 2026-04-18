@@ -58,7 +58,7 @@ const Auth = () => {
     const parsed = signInSchema.safeParse({ email: f.get("email"), password: f.get("password") });
     if (!parsed.success) { toast.error("Please check your email and password"); return; }
     setBusy(true);
-    const { error } = await supabase.auth.signInWithPassword(parsed.data as SignIn);
+    const { error } = await supabase.auth.signInWithPassword({ email: parsed.data.email, password: parsed.data.password });
     setBusy(false);
     if (error) { toast.error(error.message); return; }
     nav("/companion");
