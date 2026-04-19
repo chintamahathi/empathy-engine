@@ -21,7 +21,7 @@ export const AppNav = () => {
     <header className="sticky top-0 z-40 glass border-b border-border/50">
       <div className="container flex items-center justify-between py-4">
         <Link to="/companion" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-gradient-primary shadow-glow animate-breathe" />
+          <img src="/logo.png" alt="Solace Logo" className="h-8 w-8 object-contain" />
           <span className="font-display text-2xl">Solace</span>
         </Link>
         <nav className="hidden md:flex items-center gap-1">

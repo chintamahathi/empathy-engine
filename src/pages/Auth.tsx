@@ -68,7 +68,7 @@ const Auth = () => {
     <div className="min-h-screen flex flex-col bg-gradient-sky">
       <header className="container py-6">
         <Link to="/" className="flex items-center gap-2 w-fit">
-          <div className="h-8 w-8 rounded-full bg-gradient-primary shadow-glow animate-breathe" />
+          <img src="/logo.png" alt="Solace Logo" className="h-8 w-8 object-contain" />
           <span className="font-display text-2xl">Solace</span>
         </Link>
       </header>

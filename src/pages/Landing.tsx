@@ -12,7 +12,7 @@ const Landing = () => {
     <div className="min-h-screen bg-gradient-sky">
       <header className="container flex items-center justify-between py-6">
         <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-gradient-primary shadow-glow animate-breathe" />
+          <img src="/logo.png" alt="Solace Logo" className="h-8 w-8 object-contain" />
           <span className="font-display text-2xl">Solace</span>
         </div>
         <Link to="/auth"><Button variant="ghost">Sign in</Button></Link>
@@ -41,7 +41,7 @@ const Landing = () => {
             <div className="absolute inset-0 bg-gradient-sunrise rounded-[3rem] blur-3xl opacity-60" />
             <div className="relative glass rounded-[2.5rem] p-8 shadow-soft animate-float-slow">
               <div className="flex items-center gap-3 mb-4">
-                <div className="h-10 w-10 rounded-full bg-gradient-primary" />
+                <img src="/logo.png" alt="Solace Logo" className="h-10 w-10 object-contain" />
                 <div>
                   <div className="font-medium">Solace</div>
                   <div className="text-xs text-muted-foreground">listening...</div>
