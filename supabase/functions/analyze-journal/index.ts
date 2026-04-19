@@ -45,12 +45,13 @@ Deno.serve(async (req) => {
         status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
     }
-    const KEY = Deno.env.get("LOVABLE_API_KEY");
-    const resp = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
+    const KEY = Deno.env.get("GEMINI_API_KEY");
+    if (!KEY) throw new Error("GEMINI_API_KEY not configured");
+    const resp = await fetch("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions", {
       method: "POST",
       headers: { Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "google/gemini-2.5-flash",
+        model: "gemini-2.0-flash",
         messages: [
           { role: "system", content: SYSTEM },
           { role: "user", content: `Journal entry:\n\n${content}` },
