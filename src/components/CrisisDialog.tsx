@@ -4,10 +4,11 @@ import { Phone, MessageSquare, Globe, Heart } from "lucide-react";
 interface Props { open: boolean; onOpenChange: (o: boolean) => void; severity?: "medium" | "high" }
 
 const resources = [
-  { name: "988 Suicide & Crisis Lifeline (US)", detail: "Call or text 988", href: "tel:988", icon: Phone },
-  { name: "Crisis Text Line", detail: "Text HOME to 741741 (US/CA/UK/IE)", href: "sms:741741&body=HOME", icon: MessageSquare },
+  { name: "iCall (India)", detail: "9152987821 — Mon–Sat, 8am–10pm", href: "tel:9152987821", icon: Phone },
+  { name: "Vandrevala Foundation (India)", detail: "1860-2662-345 — free, 24/7", href: "tel:18602662345", icon: Phone },
+  { name: "AASRA (India)", detail: "9820466726 — 24/7, confidential", href: "tel:9820466726", icon: Phone },
+  { name: "KIRAN Mental Health Helpline", detail: "1800-599-0019 — Govt. of India, 24/7", href: "tel:18005990019", icon: Phone },
   { name: "International Association for Suicide Prevention", detail: "Find a hotline in your country", href: "https://www.iasp.info/resources/Crisis_Centres/", icon: Globe },
-  { name: "SAMHSA Helpline (US)", detail: "1-800-662-4357 — free, confidential, 24/7", href: "tel:18006624357", icon: Phone },
 ];
 
 export const CrisisDialog = ({ open, onOpenChange, severity }: Props) => (
